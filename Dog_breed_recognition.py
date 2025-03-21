@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from keras.preprocessing import image
+from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications import ResNet50
 from tensorflow.keras.applications.resnet50 import decode_predictions, preprocess_input
 import os
