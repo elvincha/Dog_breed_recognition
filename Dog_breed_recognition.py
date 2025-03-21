@@ -238,4 +238,4 @@ if api_key:
         for breed, description in popular_breeds.items():
             st.markdown(f"**{breed}**: {description}")
 else:
-    st.warning("Veuillez entrer votre clé API pour continuer.")
+    st.warning("Veuillez entrer votre clé API pour continuer. (https://console.mistral.ai/api-keys) c'est gratuit !")
