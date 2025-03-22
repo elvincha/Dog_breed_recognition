@@ -20,8 +20,15 @@ st.set_page_config(
 st.title("🐶 Identification et Conseils sur les Races de Chiens")
 st.write("Téléchargez une photo de chien pour identifier sa race et obtenir des conseils personnalisés")
 
-# Champ d'entrée pour la clé API
-api_key = st.text_input("Entrez votre clé API Mistral", type="password")
+# Récupération de la clé API depuis les secrets
+try:
+    api_key = st.secrets["api_mistral"]
+    api_configured = True
+except Exception:
+    api_configured = False
+    st.warning("Clé API Mistral non configurée dans les secrets. Certaines fonctionnalités peuvent ne pas être disponibles.")
+    # Optionnel: Permettre la saisie manuelle si non configurée dans les secrets
+    api_key = st.text_input("Entrez votre clé API Mistral", type="password")
 
 # Vérifiez si la clé API est fournie
 if api_key:
